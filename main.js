@@ -1,6 +1,8 @@
 var EventMaster = require('barco-eventmaster');
+var Gpio = require('onoff').Gpio;
 
 const localIp = getIP();
+console.log(localIp);
 const port = 4897;
 
 var GPIO17 = new Gpio(17, 'out');
@@ -72,5 +74,5 @@ function getIP() {
           }
       }
   }
-  return results[0][0];
+  return results[0];
 }
