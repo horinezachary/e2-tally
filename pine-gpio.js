@@ -12,7 +12,7 @@ class Pin {
   }
 
   initialize(number, direction) {
-    exec('echo '+ number +' > gpio_path' + 'export',
+    exec('echo '+ number +' > '+ gpio_path + 'export',
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
@@ -20,7 +20,7 @@ class Pin {
              console.log('exec error: ' + error);
         }
     });
-    exec('echo '+ direction +' > gpio_path' + 'gpio'+ number +"/direction",
+    exec('echo '+ direction +' > '+ gpio_path + 'gpio'+ number +"/direction",
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
@@ -31,7 +31,7 @@ class Pin {
   }
 
   uninitialize(number) {
-    exec('echo '+ 0 +' > gpio_path' + 'gpio'+ number +"/value",
+    exec('echo '+ 0 +' > '+ gpio_path + 'gpio'+ number +"/value",
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
@@ -39,7 +39,7 @@ class Pin {
              console.log('exec error: ' + error);
         }
     });
-    exec('echo '+ number +' > gpio_path' + 'unexport',
+    exec('echo '+ number +' > '+ gpio_path + 'unexport',
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
@@ -51,7 +51,7 @@ class Pin {
 
   digitalWrite(value) {
     if (value == HIGH || value == LOW) {
-      exec('echo '+ value +' > gpio_path' + 'gpio'+ this.pinNumber +"/value",
+      exec('echo '+ value +' > '+ gpio_path + 'gpio'+ this.pinNumber +"/value",
       function (error, stdout, stderr) {
           console.log('stdout: ' + stdout);
           console.log('stderr: ' + stderr);
