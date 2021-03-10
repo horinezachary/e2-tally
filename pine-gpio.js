@@ -126,10 +126,10 @@ const eulerPins = [
 exports.getPin = function(bus,pin) {
   gpio = NUL;
   if (bus == PI2) {
-    gpio = piPins[pin+1];
+    gpio = piPins[pin-1];
     console.log(gpio);
   } else if (bus == EULER) {
-    gpio = eulerPins[pin+1];
+    gpio = eulerPins[pin-1];
   }
   if (gpio == P3V || gpio == P5V || gpio == GND || gpio == DCI || gpio == NUL) {
     return -1;
