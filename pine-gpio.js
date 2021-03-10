@@ -6,7 +6,7 @@ const LOW = 0;
 
 class Pin {
   constructor(number,direction) {
-    initialize(number,direction);
+    this.initialize(number,direction);
   }
 
   initialize(number, direction) {
