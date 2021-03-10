@@ -1,10 +1,10 @@
 var EventMaster = require('barco-eventmaster');
-var Gpio = require('onoff').Gpio;
-
-//const localIp = getIP();
+var Gpio = require('./pine-gpio.js');
+const localIp = "192.168.2.109" //getIP();
 console.log(localIp);
 const port = 4897;
 
+/*
 var GPIO17 = new Gpio(17, 'out');
 var GPIO21 = new Gpio(21, 'out');
 var GPIO22 = new Gpio(22, 'out');
@@ -13,6 +13,11 @@ GPIO17.writeSync(1);
 GPIO21.writeSync(1);
 GPIO22.writeSync(1);
 console.log("On!");
+*/
+
+var GPIO17 = new Gpio("71", 'out');
+GPIO17.digitalWrite(1);
+
 /*
 // Change this ip to your own E2/S3 IP
 var em = new EventMaster('10.0.0.1');
