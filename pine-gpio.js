@@ -6,6 +6,8 @@ const LOW = 0;
 
 class Pin {
   constructor(number,direction) {
+    this.pinNumber = number;
+    this.direction = direction;
     this.initialize(number,direction);
   }
 
@@ -49,7 +51,7 @@ class Pin {
 
   digitalWrite(value) {
     if (value == HIGH || value == LOW) {
-      exec('echo '+ value +' > gpio_path' + 'gpio'+ number +"/value",
+      exec('echo '+ value +' > gpio_path' + 'gpio'+ this.pinNumber +"/value",
       function (error, stdout, stderr) {
           console.log('stdout: ' + stdout);
           console.log('stderr: ' + stderr);
