@@ -18,6 +18,7 @@ exports.Pin = class Pin {
     this.pinNumber = number;
     this.direction = direction;
     this.initialize(number,direction);
+    console.log(number);
   }
 
   initialize(number, direction) {
@@ -126,6 +127,7 @@ exports.getPin = function(bus,pin) {
   gpio = NUL;
   if (bus == PI2) {
     gpio = piPins[pin+1];
+    console.log(gpio);
   } else if (bus == EULER) {
     gpio = eulerPins[pin+1];
   }
