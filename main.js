@@ -1,7 +1,7 @@
 var EventMaster = require('barco-eventmaster');
 var Gpio = require('onoff').Gpio;
 
-const localIp = getIP();
+//const localIp = getIP();
 console.log(localIp);
 const port = 4897;
 
@@ -12,6 +12,7 @@ var GPIO22 = new Gpio(22, 'out');
 GPIO17.writeSync(1);
 GPIO21.writeSync(1);
 GPIO22.writeSync(1);
+console.log("On!");
 /*
 // Change this ip to your own E2/S3 IP
 var em = new EventMaster('10.0.0.1');
@@ -56,7 +57,7 @@ em.subscribe(localIp, port, ["ScreenDestChanged","FrameChanged"], function(err, 
 return self;
 */
 
-
+/*
 function getIP() {
   const { networkInterfaces } = require('os');
 
@@ -75,4 +76,4 @@ function getIP() {
       }
   }
   return results[0];
-}
+}*/
