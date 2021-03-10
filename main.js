@@ -5,11 +5,11 @@ const localIp = "192.168.2.109" //getIP();
 console.log(localIp);
 const port = 4897;
 
-var GPIO11 = new Gpio(getPin(11), 'out');
+var GPIO11 = new Gpio(getPin("PI2",11), 'out');
 GPIO11.digitalWrite(1);
-var GPIO13 = new Gpio(getPin(13), 'out');
+var GPIO13 = new Gpio(getPin("PI2",13), 'out');
 GPIO13.digitalWrite(1);
-var GPIO15 = new Gpio(getPin(15), 'out');
+var GPIO15 = new Gpio(getPin("PI2",15), 'out');
 GPIO15.digitalWrite(1);
 
 /*
